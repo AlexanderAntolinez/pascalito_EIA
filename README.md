@@ -30,6 +30,9 @@ Este repositorio contiene:
 - **Paquete de control de motores (`motor_control_pkg`)**: 
   Controla los motores y el LiDAR.
 
+- **Paquete de teleoperación (`yahboomcar_ctrl`)**: 
+  Controla el robot por medio del teclado.(ofrecido por los desarroladores de la placa) 
+
 - **Configuraciones de SLAM y navegación**:
   - Archivos de parámetros para **SLAM Toolbox** y **Navigation2**.
   - Archivos de lanzamiento para diferentes funcionalidades del robot.
