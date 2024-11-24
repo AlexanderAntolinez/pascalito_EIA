@@ -18,3 +18,9 @@ Pascalito está construido con los siguientes componentes de hardware:
 Para iniciar el mapeo desde la estación de control:
 ```bash
 ros2 launch pascalito pascalito_mapeo.py
+
+
+### **2. Navegación con Nav2**
+Para iniciar el sistema de navegación:
+```bash
+ros2 launch pascalito pascalito_navegante.py
