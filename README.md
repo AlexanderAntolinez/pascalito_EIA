@@ -5,13 +5,21 @@ Bienvenido al repositorio de **Pascalito**, un robot móvil desarrollado con ROS
 ## **Componentes del Robot**
 Pascalito está construido con los siguientes componentes de hardware:
 
-- **LiDAR**: RPLIDAR A2M8
+- **LiDAR**: RPLIDAR A1
 - **Computadora principal**: Raspberry Pi 5
 - **Controlador**: Yahboom ROS Robot Control Board V1.0
 - **Actuadores**: 4 motores DC JGB37-520 con encoders integrados
 
 ---
+## **Clonar el Paquete del LiDAR**
 
+El paquete utilizado para controlar el LiDAR es **`rplidar_ros`**. Para usarlo en este proyecto, clona el repositorio oficial en tu workspace de ROS 2.
+
+### **Comando para clonar:**
+```bash
+git clone https://github.com/Slamtec/rplidar_ros.git
+```
+---
 ## **Estructura del Proyecto**
 
 Este repositorio contiene:
