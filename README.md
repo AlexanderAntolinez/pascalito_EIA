@@ -65,7 +65,7 @@ Para iniciar el mapeo desde la estación de control:
 ros2 launch motor_control_pkg pascalito_bringup.py
 ```
 
-### **2. Control del LiDAR por separado**
+### **2. Control del LiDAR por separado (Opcional)**
 Para iniciar el sistema de navegación:
 ```bash
 ros2 launch rplidar_ros rplidar_a1_launch.py
