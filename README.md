@@ -1,6 +1,6 @@
 # **Pascalito_EIA**
 
-Bienvenido al repositorio de **Pascalito**, un robot móvil desarrollado con ROS 2 que utiliza una Raspberry Pi 5 y hardware adicional para navegación, mapeo y control.
+Bienvenido al repositorio de **Pascalito**, un robot móvil desarrollado con ROS 2 Jazzy Jalisco que utiliza una Raspberry Pi 5 y hardware adicional para navegación, mapeo y control.
 
 ## **Componentes del Robot**
 Pascalito está construido con los siguientes componentes de hardware:
@@ -47,7 +47,11 @@ Para iniciar el sistema de navegación:
 ```bash
 ros2 launch pascalito pascalito_navegante.py
 ```
-
+### **3. Control para teleoperación (Opcional)**
+Para iniciar el sistema de navegación:
+```bash
+ros2 run yahboomcar_ctrl yahboom_keyboard
+```
 ---
 
 ## **Configuración en la Raspberry Pi 5**
@@ -69,7 +73,11 @@ ros2 launch rplidar_ros rplidar_a1_launch.py
 
 ![Pascalito Robot](img/conection.png "Pascalito en acción")
 
+---
 
+## **Notas**
+
+Si vas a utilizar la navegación recuerda que no debes estar ejecutando el **`yahboom_keyboard`**, dado que este manda comandos a /cmd_vel en 0 cuando no estas presionando las teclas
 
 
 
