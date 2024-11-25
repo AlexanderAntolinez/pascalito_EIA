@@ -1,0 +1,41 @@
+[1.220s] Invoking command in '/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg': PYTHONPATH=/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/build --no-deps symlink_data
+[1.683s] running develop
+[1.683s] /usr/lib/python3/dist-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[1.683s] !!
+[1.684s] 
+[1.684s]         ********************************************************************************
+[1.684s]         Please avoid running ``setup.py`` and ``easy_install``.
+[1.684s]         Instead, use pypa/build, pypa/installer or other
+[1.684s]         standards-based tools.
+[1.684s] 
+[1.684s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[1.684s]         ********************************************************************************
+[1.684s] 
+[1.684s] !!
+[1.684s]   easy_install.initialize_options(self)
+[2.010s] running egg_info
+[2.010s] creating motor_control_pkg.egg-info
+[2.038s] writing motor_control_pkg.egg-info/PKG-INFO
+[2.039s] writing dependency_links to motor_control_pkg.egg-info/dependency_links.txt
+[2.039s] writing entry points to motor_control_pkg.egg-info/entry_points.txt
+[2.039s] writing requirements to motor_control_pkg.egg-info/requires.txt
+[2.040s] writing top-level names to motor_control_pkg.egg-info/top_level.txt
+[2.040s] writing manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+[2.117s] reading manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+[2.118s] writing manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+[2.162s] running build_ext
+[2.164s] Creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/python3.12/site-packages/motor-control-pkg.egg-link (link to .)
+[2.166s] Installing master_control script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+[2.167s] Installing motor_control_node script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+[2.170s] Installing motor_odom_node script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+[2.170s] 
+[2.171s] Installed /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg
+[2.171s] running symlink_data
+[2.172s] creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index
+[2.172s] creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index
+[2.173s] creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index/packages
+[2.173s] symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/resource/motor_control_pkg -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index/packages
+[2.174s] symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/package.xml -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg
+[2.174s] creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg/launch
+[2.175s] symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/launch/pascalito_bringup.py -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg/launch
+[2.341s] Invoked command in '/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg' returned '0': PYTHONPATH=/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/build --no-deps symlink_data

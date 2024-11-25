@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating motor_control_pkg.egg-info
+writing motor_control_pkg.egg-info/PKG-INFO
+writing dependency_links to motor_control_pkg.egg-info/dependency_links.txt
+writing entry points to motor_control_pkg.egg-info/entry_points.txt
+writing requirements to motor_control_pkg.egg-info/requires.txt
+writing top-level names to motor_control_pkg.egg-info/top_level.txt
+writing manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+reading manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+writing manifest file 'motor_control_pkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/python3.12/site-packages/motor-control-pkg.egg-link (link to .)
+Installing master_control script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+Installing motor_control_node script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+Installing motor_odom_node script to /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/lib/motor_control_pkg
+
+Installed /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg
+running symlink_data
+creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index
+creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index
+creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index/packages
+symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/resource/motor_control_pkg -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/ament_index/resource_index/packages
+symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/package.xml -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg
+creating /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg/launch
+symbolically linking /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/build/motor_control_pkg/launch/pascalito_bringup.py -> /home/pascalito/ros2_ws_pascalv1/src/motor_control_pkg/install/motor_control_pkg/share/motor_control_pkg/launch

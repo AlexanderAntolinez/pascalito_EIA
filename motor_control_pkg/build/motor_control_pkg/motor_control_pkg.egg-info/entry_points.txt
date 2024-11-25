@@ -1,0 +1,4 @@
+[console_scripts]
+master_control = motor_control_pkg.master_control:main
+motor_control_node = motor_control_pkg.motor_control_node:main
+motor_odom_node = motor_control_pkg.motor_odom_node:main

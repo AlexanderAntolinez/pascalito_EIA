@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    
+    <!--########-->
+    <!-- COLORS -->
+    <!--########-->
+    <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+
+    <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+    </material>
+
+    <!--######-->
+    <!-- BODY -->
+    <!--######-->
+	<link name="base_link">
+		<visual>
+            <geometry>
+                <box size="0.26 0.152 0.05"/>
+            </geometry>
+            <material name="red"/>
+		</visual>
+		<collision>
+            <geometry>
+                <box size="0.26 0.152 0.05"/>
+            </geometry>
+		</collision>
+	</link>
+
+    <link name="base_footprint"/>
+
+	
+
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+
+    </joint>
+    <!--########-->
+    <!-- WHEELS -->
+    <!--########-->
+
+    <!-- Motor 1 -->
+    <joint name="motor1" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel1"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="10" velocity="20"/>
+		<origin xyz="0.075 0.096 -0.035" rpy="1.57 0 0"/>
+	</joint>
+	<link name="wheel1">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+            <material name="black"/>
+		</visual>
+		<collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+		</collision>
+	</link>
+
+    <!-- Motor 2 -->
+	<joint name="motor2" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel2"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="10" velocity="20"/>
+		<origin xyz="0.075 -0.096 -0.035" rpy="1.57 0 0"/>
+	</joint>
+	<link name="wheel2">
+		<visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+            <material name="black"/>
+		</visual>
+		<collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+		</collision>
+	</link>
+
+    <!-- Motor 3 -->
+	<joint name="motor3" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel3"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="10" velocity="20"/>
+		<origin xyz="-0.09 0.096 -0.035" rpy="1.57 0 0"/>
+	</joint>
+	<link name="wheel3">
+		<visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+            <material name="black"/>
+		</visual>
+		<collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+		</collision>
+	</link>
+
+    <!-- Motor 4 -->
+    <joint name="motor4" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel4"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="10" velocity="20"/>
+		<origin xyz="-0.09 -0.096 -0.035" rpy="1.57 0 0"/>
+	</joint>
+    <link name="wheel4">
+		<visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+            <material name="black"/>
+		</visual>
+		<collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+		</collision>
+	</link>
+
+    <!--#########-->
+    <!-- SENSORS  ${3.14151693} 0 ${-3.14151693/2}-->
+    <!--#########-->
+
+    <!-- Lidar -->
+	<joint name="base_link_lidar_joint" type="fixed">
+		<parent link="base_link"/>
+		<child link="laser"/>
+		<origin xyz="0 0 0.05" rpy="0 0 ${3.14151693}"/>
+	</joint>
+	<link name="laser">
+		<visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.05"/>
+            </geometry>
+            <material name="gray"/>
+		</visual>
+		<collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.04" length="0.05"/>
+            </geometry>
+		</collision>
+	</link>
+
+</robot>
