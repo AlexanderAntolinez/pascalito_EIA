@@ -1,0 +1,319 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Roughcast.proto"
+
+WorldInfo {
+  contactProperties [
+    DEF interiorWheelMat ContactProperties {
+      material1 "interiorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    DEF exteriorWheelMat ContactProperties {
+      material1 "exteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.19367719335068487 -0.06888741040855735 -0.9786437908978959 3.6731481132612656
+  position 5.94025427948221 -3.9238816428042376 2.9844234004205212
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 7 6
+  floorTileSize 1 1
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+  wallThickness 0.05
+  wallHeight 0.4
+}
+Wall {
+  translation -1.83 1 0
+  size 0.1 4 0.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+    IBLStrength 4
+  }
+}
+Wall {
+  translation 1.39 2 0
+  name "wall(2)"
+  size 0.1 2 0.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+    IBLStrength 4
+  }
+}
+Wall {
+  translation 0.21 -0.95 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(1)"
+  size 0.1 4 0.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+    IBLStrength 4
+  }
+}
+SolidBox {
+  translation 2.45 1.7 0.16
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+SolidBox {
+  translation -0.77 0.87 0.16
+  name "box(1)"
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0.68 0.93 0.16
+  name "box(2)"
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0.26 -2.46 0.16
+  name "box(3)"
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0.26 -1.52 0.16
+  name "box(4)"
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+SolidBox {
+  translation -2.66 -1.75 0.16
+  name "box(5)"
+  size 0.3 0.3 0.3
+  physics Physics {
+  }
+}
+Robot {
+  translation 0 0 0.075
+  children [
+    DEF lidar Lidar {
+      translation 0 0 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry DEF lidar Cylinder {
+            height 0.05
+            radius 0.04
+          }
+        }
+      ]
+      boundingObject USE lidar
+      physics Physics {
+      }
+      horizontalResolution 1024
+      fieldOfView 6.28
+      numberOfLayers 1
+      maxRange 2
+    }
+    DEF imu InertialUnit {
+      children [
+        Accelerometer {
+        }
+        Gyro {
+        }
+        Shape {
+          geometry DEF imu Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "imu"
+      boundingObject USE imu
+      physics Physics {
+      }
+    }
+    DEF wheel1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.075 0.096 -0.035
+      }
+      device [
+        DEF encoder1 PositionSensor {
+          name "encoder1"
+        }
+        DEF Motor1 RotationalMotor {
+          name "motor1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.075 0.096 -0.035
+        rotation 1 0 0 1.57
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+            }
+            geometry DEF wheel1 Cylinder {
+              height 0.04
+              radius 0.04
+            }
+          }
+        ]
+        contactMaterial "exteriorWheelMat"
+        boundingObject USE wheel1
+        physics Physics {
+        }
+      }
+    }
+    DEF wheel2 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.075 -0.096 -0.035
+      }
+      device [
+        DEF encoder2 PositionSensor {
+          name "encoder2"
+        }
+        DEF Motor2 RotationalMotor {
+          name "motor2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.075 -0.096 -0.035
+        rotation 1 0 0 1.57
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+            }
+            geometry DEF wheel1 Cylinder {
+              height 0.04
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        contactMaterial "interiorWheelMat"
+        boundingObject USE wheel1
+        physics Physics {
+        }
+      }
+    }
+    DEF wheel3 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.09 0.096 -0.035
+      }
+      device [
+        DEF encoder3 PositionSensor {
+          name "encoder3"
+        }
+        DEF Motor3 RotationalMotor {
+          name "motor3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.09 0.096 -0.035
+        rotation 1 0 0 1.57
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+            }
+            geometry DEF wheel1 Cylinder {
+              height 0.04
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        contactMaterial "interiorWheelMat"
+        boundingObject USE wheel1
+        physics Physics {
+        }
+      }
+    }
+    DEF wheel4 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.09 -0.096 -0.035
+      }
+      device [
+        DEF encoder4 PositionSensor {
+          name "encoder4"
+        }
+        DEF Motor4 RotationalMotor {
+          name "motor4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.09 -0.096 -0.035
+        rotation 1 0 0 1.57
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+            }
+            geometry DEF wheel1 Cylinder {
+              height 0.04
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        contactMaterial "exteriorWheelMat"
+        boundingObject USE wheel1
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry DEF body Box {
+        size 0.26 0.152 0.05
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "<extern>"
+}
